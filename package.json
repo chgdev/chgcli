@@ -1,6 +1,6 @@
 {
   "name": "chg-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "John Miller",
   "bin": {
     "chg": "./bin/run"
@@ -9,7 +9,9 @@
   "dependencies": {
     "@oclif/command": "^1.5.19",
     "@oclif/config": "^1.13.3",
-    "@oclif/plugin-help": "^2.2.1"
+    "@oclif/plugin-help": "^2.2.1",
+    "@oclif/plugin-not-found": "^1.2.3",
+    "@oclif/plugin-plugins": "^1.7.8"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
@@ -36,8 +38,13 @@
     "commands": "./src/commands",
     "bin": "chg",
     "plugins": [
-      "@oclif/plugin-help"
-    ]
+      "@oclif/plugin-help",
+      "@oclif/plugin-not-found",
+      "@oclif/plugin-plugins"
+    ],
+    "topics": {
+      "project": { "description": "Scaffolding and tools for creating and updating projects" }
+    }
   },
   "repository": "/",
   "scripts": {
