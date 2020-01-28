@@ -43,7 +43,12 @@
       "@oclif/plugin-plugins"
     ],
     "topics": {
-      "project": { "description": "Scaffolding and tools for creating and updating projects" }
+      "contracts": { "description": "Commands for creating and managing API and event contracts" },
+      "pipelines": { "description": "Commands for creating and managing pipelines" },
+      "project": { "description": "Scaffolding and tools for creating and updating projects" },
+      "services": { "description": "Commands for listing and creating services" },
+      "tools": { "description": "Commands for listing and creating tools" },
+      "workers": { "description": "Commands for listing and creating workers" }
     }
   },
   "repository": "/",
