@@ -23,7 +23,7 @@ module.exports = (templatePath, targetPath, options = {}) => {
 
     const metadata = loadMetadata(templatePath);
     const finalOptions = metadata.defaults;
-    copyToObject(finalOptions, metadata.defaults);
+    copyToObject(finalOptions, options);
 
     if (!finalOptions.addons) {
       finalOptions.addons = {};
