@@ -4,11 +4,13 @@ This module generates new projects from templates. Files or whole directories ca
 ## Usage
 ```js
 const pb = require('./project-builder');
-pb(templateDir, targetDir, options).then(() => {
+
+try {
+  await pb(templateDir, targetDir, options);
   // project generated
-}).catch(err => {
+} catch (err) {
   // something is borken
-});
+}
 ```
 
 The template directory must exist, and the target directory must not exist.
