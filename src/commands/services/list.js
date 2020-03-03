@@ -1,10 +1,16 @@
 const {Command, flags} = require('@oclif/command')
-
+const k8s = require('@kubernetes/client-node');
 class ServicesListCommand extends Command {
   async run() {
-    // const {flags} = this.parse(ServicesListCommand)
-    // const name = flags.name
-    this.log('Not Implemented: See Jira EA-176')
+    const kc = new k8s.KubeConfig();
+    kc.loadFromDefault();
+    const k8sApi = kc.makeApiClient(k8s.CoreV1Api);
+    try {
+      let {body} = await k8sApi.listNamespacedPod('feature') 
+      console.log(body)   
+    } catch (error) {
+      this.error('You are not authorized throught the Aws CLI')
+    }
   }
 }
 
